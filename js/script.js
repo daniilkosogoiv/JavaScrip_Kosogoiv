@@ -23,58 +23,56 @@ console.log(number(prompt('Enter your number')))
 
 
 //task 2
-function Item(product, image, price, quantity, discount = 0) {
+function object(product, price, quantity, discount = 0) {
     this.product = product;
-    this.image = `../img/${image}.png`;
     this.price = price;
     this.quantity = quantity;
     this.discount = discount;
-    this.finalPrice = function() {
+    this.endprice = function() {
         if (this.discount != 0) {
             return this.price - this.price * this.discount / 100;
         } else {
             return this.price;
         }
     }
-    this.showMyChart = function() {
-        return `${this.product} (количество: ${this.quantity})`;
+    this.number = function() {
+        return `${this.product} (Quantity: ${this.quantity})`;
     }
 }
 
-let shoppingCart = []
+let shopProduct = []
 
-shoppingCart.push(
-    new Item('product_name_1', 'product_imge_1', 95, 2)
+shopProduct.push(
+    new object('Apple', 2, prompt("enter quantity Apple"))
 );
-shoppingCart.push(
-    new Item('product_name_2', 'product_imge_2', 17, 5, 10)
+shopProduct.push(
+    new object('Orange', 1, prompt("enter quantity Orange"))
 );
-shoppingCart.push(
-    new Item('product_name_3', 'product_imge_3', 17.5, 6)
+shopProduct.push(
+    new object('Cherry', 13, prompt("enter quantity Cherry"))
 );
-shoppingCart.push(
-    new Item('product_name_4', 'product_imge_4', 32, 1)
+shopProduct.push(
+    new object('banana', 99, prompt("enter quantity banana"))
 );
-shoppingCart.push(
-    new Item('product_name_5', 'product_imge_5', 22, 10, 25)
+shopProduct.push(
+    new object('Avacado', 28, prompt("enter quantity Avacado"))
 );
 
-// console.log(shoppingCart)
 
-function finalChart(shoppingCart) {
-    console.log('Ваш заказ: ')
-    shoppingCart.forEach(val => {
-        console.log(`${val.showMyChart()}.
-    Цена с учетом скидки: ${val.finalPrice()}.
-    Стоимость позиции: ${val.quantity * val.finalPrice()}`);
+function finalChart(shopProduct) {
+    console.log('You order: ')
+    shopProduct.forEach(val => {
+        console.log(`${val.number()}.
+        Discounted price: ${val.endprice()}.
+    Cost: ${val.quantity * val.endprice()}`);
     });
 }
-finalChart(shoppingCart);
+finalChart(shopProduct);
 
 
-function finalCost(shoppingCart) {
-    return shoppingCart.reduce(function(acc, shoppingCart) {
-        return acc + (shoppingCart.finalPrice() * shoppingCart.quantity)
+function finalCost(shopProduct) {
+    return shopProduct.reduce(function(acc, shopProduct) {
+        return acc + (shopProduct.endprice() * shopProduct.quantity)
     }, 0)
 };
-console.log(('Конечная стоимость заказа: ' + finalCost(shoppingCart)).toUpperCase());
+console.log(('final price: ' + finalCost(shopProduct)).toUpperCase());
