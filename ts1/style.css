@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    margin: 0 auto;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    margin: 25px 0;
+}
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#chess {
+    display: flex;
+    border: 1px solid black;
+}
+
+.column>div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.black {
+    background: black;
+}
+
+.frame {
+    background: rgb(226, 223, 52);
+}
