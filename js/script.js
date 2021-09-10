@@ -1,22 +1,41 @@
-// LS 1
-let celsius = prompt('Температура в градусах по Цельсию ', ' ');
-let messageCel;
-let messageFar;
-messageCel = ' градусов по Цельсию = ';
-messageFar = ' градусов по Фаренгейту'
-farengeit = celsius * 1.8 + 32;
-alert(celsius + messageCel + farengeit + messageFar);
+//task 2
+
+if (!("a" in window)) { //if проверяет глобальную переменную "а", но переменная "а" объявленна локально. результат undefind
+    var a = 1;
+}
+alert(a);
 
 
 
-// LS 2 
-let admin;
-let name;
 
-admin = "Василий";
-name = admin;
-alert(name); //Не могу разобраться из-за чего зачеркивается "name"
+// "а" не объявленна глобально, следовательно ошибка
+var b = function a(x) {
+    x && a(--x);
+};
+alert(a);
 
 
-//ls 3 
-//1000+"108"=1000108
+//при создании переменной "a" ей не присваивается значение >>> вывод function a(x){return x * 2;}
+function a(x) {
+    return x * 2;
+}
+var a;
+alert(a);
+//аргументы функции = массив. второму элементу присвоено 10. Результат 10
+function b(x, y, a) {
+    arguments[2] = 10;
+
+    alert(a);
+}
+b(1, 2, 3);
+
+
+//метод call получил null, следовательно ссылается на глобальный объект window.a. Вывод obgect Window
+function a() {
+    alert(this);
+}
+a.call(null);
+
+
+
+//task 1
