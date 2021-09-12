@@ -15,8 +15,8 @@
 
                             wrap.style.width = '400px';
 
-                            document.getElementById('snake-start').addEventListener('click', startGame); //По клику на кнопку snake-start запускаем функцию startGame()
-                            document.getElementById('snake-renew').addEventListener('click', refreshGame); //По клику на кнопку snake-renew обновляем игровое поле функцией refreshGame(), начиная новую игру.
+                            document.getElementById('snake-start').addEventListener('click', startGame); 
+                            document.getElementById('snake-renew').addEventListener('click', refreshGame); 
 
 
                             addEventListener('keydown', changeDirection);
